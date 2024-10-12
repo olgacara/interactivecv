@@ -1,1 +1,1 @@
-# interactivecv
+# Interactive CV
