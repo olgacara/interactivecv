@@ -64,10 +64,9 @@
             "description": "Prototyping af en brugergrænseflade til en ny version af Volkswagens infotainmentsystem til biler, MIB3, og efterfølgende udvikling af den ved hjælp af Angular. Det tog de første 6 måneder. Bagefter arbejdede jeg på forskellige opgaver med deres Java platform"
         }
     ],
-    "education": [
-        {
-            "institution": "Polyteknisk universitet i Valencia",
-            "study": "Bachelor i Informationsteknologi med specialisering i Softwareudvikling"
-        }
-    ]
+    "education": {
+        "institution": "Polyteknisk universitet i Valencia",
+        "study": "Bachelor i Informationsteknologi",
+        "year": 2016
+    }
 }

@@ -5,7 +5,7 @@ export interface CV {
     basic_info: BasicInfo;
     skills: Skill[];
     experience: Experience[];
-    education: Education[];
+    education: Education;
 }
 
 interface BasicInfo {
@@ -17,6 +17,10 @@ interface BasicInfo {
     address: string;
     summary: string;
     photo: string;
+    socials: {
+        linkedin?: string;
+        github?: string;
+    }
 }
 
 interface Skill {
@@ -41,4 +45,5 @@ interface Project {
 interface Education {
     institution: string;
     study: string;
+    year: number;
 }

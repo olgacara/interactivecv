@@ -20,7 +20,7 @@ declare module "@types" {
         basic_info: BasicInfo;
         skills: Skill[];
         experience: Experience[];
-        education: Education[];
+        education: Education;
     }
 
     interface BasicInfo {
@@ -60,5 +60,6 @@ declare module "@types" {
     interface Education {
         institution: string;
         study: string;
+        year: number;
     }
 }

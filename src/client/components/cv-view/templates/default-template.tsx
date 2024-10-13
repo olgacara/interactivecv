@@ -4,7 +4,8 @@ import React from "react";
 // Possible to add more customization like size, etc.
 export const DefaultTemplate = (props: { cv: CV }) => {
     const { cv: {
-        basic_info: basicInfo
+        basic_info: basicInfo,
+        education
     } } = props
 
     return (
@@ -13,7 +14,9 @@ export const DefaultTemplate = (props: { cv: CV }) => {
                 <div className="name-container">
                     <span>{basicInfo.firstName}</span>
                     <span>{basicInfo.lastName}</span>
-                    <span className="occupation">{basicInfo.occupation}</span>
+                    <span className="occupation">
+                        {`${basicInfo.occupation} | ${education.study} | ${education.institution} | ${education.year}`}
+                    </span>
                 </div>
                 <div className="basic-info__other-info">
                     <div className="personal-pic">

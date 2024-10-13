@@ -7,8 +7,6 @@ $textColor: #333333;
     flex-grow: 1;
     align-self: center;
     background-color: $white;
-    margin: 1rem 5rem;
-    padding: 3rem;
     font-family: 'Verdana', sans-serif;
     color: color.adjust($textColor, $lightness: -10%);
 
@@ -16,11 +14,15 @@ $textColor: #333333;
         display: flex;
         justify-content: space-between;
         height: 13rem;
+        padding: 3rem;
+        background-image: url('/assets/background.jpg');
+        background-size: cover;
+        background-position: center;
 
         .name-container {
             display: flex;
             flex-direction: column;
-            font-size: 3rem;
+            font-size: 3.5rem;
             line-height: 4rem;
             color: rgb(27, 27, 27);
             font-weight: 500;
@@ -28,7 +30,6 @@ $textColor: #333333;
 
             .occupation {
                 font-size: 1rem;
-                line-height: 2rem;
                 color: color.adjust($textColor, $lightness: 10%)
             }
         }
