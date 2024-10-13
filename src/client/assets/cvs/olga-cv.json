@@ -1,0 +1,66 @@
+{
+    "cv_label": "Olga Cara Sørensen CV",
+    "template": "default",
+    "basic_info": {
+        "name": "Olga Cara Sørensen",
+        "tlf": "50325061",
+        "email": "olgacara100@gmail.com",
+        "address": "Aarhus, Danmark",
+        "summary": "Jeg er en erfaren fullstack-udvikler med fem års erfaring inden for webudvikling, specialiseret i React framework, TypeScript og et halvt års erfaring i Angular og .NET frameworks. Jeg har masser af erfaring med at bygge skalerbare, brugervenlige webapplikationer til SaaS virksomhed. Jeg brænder for webudvikling og jeg trives i et teamorienteret miljø, hvor samarbejde, afslappet atmosfære og vidensdeling er i fokus.",
+        "photo": "/client/assets/olga.jpg"
+    },
+    "skills": [
+        {
+            "label": "React",
+            "level": "4"
+        },
+        {
+            "label": "Typescript/Javascript",
+            "level": "4"
+        },
+        {
+            "label": "SQL databaser",
+            "level": "4"
+        },
+        {
+            "label": "Docker",
+            "level": "2"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Adversus A/S",
+            "from": "03/2020",
+            "to": null,
+            "position": "Fullstack udvikler",
+            "description": "Udvikling og vedligeholdelse af callcenter-platform i React frontend og forskellige backend teknologier",
+            "projects": [
+                {
+                    "label": "Telefonnummertjeneste",
+                    "description": "Udvikling af telefonnummertjeneste, der lytter efter CRUD-anmodninger fra hovedapplikationen med integrering af flere telefonnumerleverandørers API’er og kald til dem for at få nye numre medforskellige landekrav"
+                },
+                {
+                    "label": "Integration af Single sign-on (SSO)",
+                    "description": null
+                },
+                {
+                    "label": "Telefonnummerliste",
+                    "description": "I stedet for at ringe ud med kun 1 telefonnummer, lade kunderne ringe med en liste af numre ved hjælp af en bestemt strategi (bedste regionale match, mindre brugt telefonnummer, for eksempel). Det gjorde det muligt for vores kunder at bevare kvaliteten af deres numre i længere tid og få 40% flere besvarede opkald"
+                }
+            ]
+        },
+        {
+            "company": "AKKA Technologies",
+            "from": "09/2018",
+            "to": "12/2019",
+            "position": "Software udvikler",
+            "description": "Prototyping af en brugergrænseflade til en ny version af Volkswagens infotainmentsystem til biler, MIB3, og efterfølgende udvikling af den ved hjælp af Angular. Det tog de første 6 måneder. Bagefter arbejdede jeg på forskellige opgaver med deres Java platform"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Polyteknisk universitet i Valencia",
+            "study": "Bachelor i Informationsteknologi med specialisering i Softwareudvikling"
+        }
+    ]
+}
