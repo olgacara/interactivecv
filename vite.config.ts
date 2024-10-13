@@ -14,7 +14,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@assets": join(__dirname, "src", "client", "assets"),
+      "@assets": join(__dirname, "public", "assets"),
       "@styles": join(__dirname, "src", "client", "scss"),
       "@widgets": join(__dirname, "src", "client", "widgets")
     }

@@ -10,12 +10,13 @@ export const MainPage = () => {
             </div>
             <BrowserRouter>
                 <Routes>
-                    {/* Redirect from "/" to "/list" */}
-                    <Route path="/" element={<Navigate to="/list" />} />
+                    {/* Redirect from "/" to "/list". At the moment use the one with id 1 */}
+                    <Route path="/" element={<Navigate to="/list/1" />} />
 
                     {/* Route for /list */}
-                    <Route path="/list" element={<CVView />} />
+                    <Route path="/list/:id" element={<CVView />} />
 
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </BrowserRouter>
         </div>

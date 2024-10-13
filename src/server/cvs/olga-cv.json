@@ -1,13 +1,20 @@
 {
+    "id": 1,
     "cv_label": "Olga Cara Sørensen CV",
     "template": "default",
     "basic_info": {
-        "name": "Olga Cara Sørensen",
+        "firstName": "Olga Cara",
+        "lastName": "Sørensen",
+        "occupation": "Fullstack udvikler",
         "tlf": "50325061",
         "email": "olgacara100@gmail.com",
         "address": "Aarhus, Danmark",
         "summary": "Jeg er en erfaren fullstack-udvikler med fem års erfaring inden for webudvikling, specialiseret i React framework, TypeScript og et halvt års erfaring i Angular og .NET frameworks. Jeg har masser af erfaring med at bygge skalerbare, brugervenlige webapplikationer til SaaS virksomhed. Jeg brænder for webudvikling og jeg trives i et teamorienteret miljø, hvor samarbejde, afslappet atmosfære og vidensdeling er i fokus.",
-        "photo": "/client/assets/olga.jpg"
+        "photo": "olgacarapic.jpg",
+        "socials": {
+            "linkedin": "https://www.linkedin.com/in/olga-cara-sorensen/",
+            "github": "https://github.com/olgacara"
+        }
     },
     "skills": [
         {

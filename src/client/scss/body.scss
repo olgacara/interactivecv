@@ -1,3 +1,4 @@
+@use 'sass:color';
 $sidebarColor: #282b30;
 $white: #ffffff;
 
@@ -14,15 +15,17 @@ body {
 
 .main-content {
   position: relative;
-  display: table-cell;
+  display: flex;
+  flex-direction: column;
   vertical-align: top;
   padding: 20px;
-  background: #ffffff;
+  background-color: color.adjust($sidebarColor, $lightness: 75%);
   width: 100%;
   flex-grow: 1;
 
   .main-header {
     display: flex;
+    height: 8rem;
   }
 }
 

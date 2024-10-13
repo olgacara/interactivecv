@@ -1,0 +1,62 @@
+@use 'sass:color';
+$white: #ffffff;
+$textColor: #333333;
+
+.cv-container {
+    min-width: 80rem;
+    flex-grow: 1;
+    align-self: center;
+    background-color: $white;
+    margin: 1rem 5rem;
+    padding: 3rem;
+    font-family: 'Verdana', sans-serif;
+    color: color.adjust($textColor, $lightness: -10%);
+
+    .basic-info {
+        display: flex;
+        justify-content: space-between;
+        height: 13rem;
+
+        .name-container {
+            display: flex;
+            flex-direction: column;
+            font-size: 3rem;
+            line-height: 4rem;
+            color: rgb(27, 27, 27);
+            font-weight: 500;
+            font-style: normal;
+
+            .occupation {
+                font-size: 1rem;
+                line-height: 2rem;
+                color: color.adjust($textColor, $lightness: 10%)
+            }
+        }
+
+        &__other-info {
+            display: flex;
+
+            .personal-pic img {
+                width: 12rem;
+                height: 12rem;
+                border-radius: 50%;
+            }
+
+            .socials {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-left: 2rem;
+                margin-left: 1rem;
+                border-left: 1px solid grey;
+                border-width: 1px;
+                border-color: rgb(172, 168, 153);
+
+                img {
+                    cursor: pointer;
+                    width: 3.6rem;
+                }
+            }
+        }
+    }
+}

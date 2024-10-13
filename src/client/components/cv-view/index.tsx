@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
+import { CV } from "@types";
+import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
+import { useParams } from "react-router-dom";
+import { getCvInfo } from "../../web";
+import { Spinner } from "@widgets/spinner";
+import { DefaultTemplate } from "./templates/default-template";
+import "@styles/cv-view.scss"
 
 export const CVViewTitle = (props: { cvLabel: string }) => {
     const [mainPageTitleElement, setMainPageTitleElement] = useState<HTMLElement | null>(null);
@@ -21,13 +27,43 @@ export const CVViewTitle = (props: { cvLabel: string }) => {
         : null
 }
 
+const selectTemplate = (cv: CV | null) => {
+    if (!cv) {
+        return null;
+    }
+
+    switch (cv.template) {
+        case "default-template":
+            return <DefaultTemplate cv={cv} />
+        default:
+            return <DefaultTemplate cv={cv} />
+    }
+}
+
 export const CVView = () => {
+    const { id } = useParams();
+    const [cv, setCv] = useState<CV | null>(null)
+    const [isFetching, setFetching] = useState<boolean>(true)
+
+    useEffect(() => {
+        if (id) {
+            getCvInfo(id)
+                .then(res => {
+                    setCv(res)
+                    setFetching(false)
+                })
+                .catch(error => console.log(error)) // Handle errors
+        }
+    }, [id])
+
+    const Template = useMemo(() => selectTemplate(cv), [cv])
 
     return (
         <>
             <CVViewTitle cvLabel={"CV 1"} />
+            {isFetching && <Spinner />}
             <div className="cv-container">
-                Yeehaa
+                {Template}
             </div>
         </>
 
