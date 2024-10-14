@@ -28,7 +28,11 @@ Sørg for, at du har installeret alle de følgende forudsætninger på din maski
    ```sh
    git clone https://github.com/olgacara/interactivecv.git
    ```
-2. Installer NPM-pakker
+2. Gå til mappen intractivecv
+   ```sh
+   cd interactivecv
+   ```
+3. Installer NPM-pakker
    ```sh
    npm install
    ```
