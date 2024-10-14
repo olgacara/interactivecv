@@ -6,8 +6,6 @@ import { Tooltip } from 'react-tooltip'
 // Possible to add more customization like size, etc.
 export const DefaultTemplate = (props: { cv: CV }) => {
     const { cv: {
-        basic_info: basicInfo,
-        education,
         experience,
         skills,
         hobbies,
@@ -17,27 +15,7 @@ export const DefaultTemplate = (props: { cv: CV }) => {
     return (
         <>
             <div className="basic-info">
-                <div className="name-container">
-                    <span>{basicInfo.firstName}</span>
-                    <span>{basicInfo.lastName}</span>
-                    <span className="occupation">
-                        {`${basicInfo.occupation} | ${education.study} | ${education.institution} | ${education.year}`}
-                    </span>
-                </div>
-                <div className="basic-info__other-info">
-                    <div className="personal-pic">
-                        <img src={`/assets/profile-pics/${basicInfo.photo || "nopic.jpg"}`} />
-                    </div>
-                    <div className="socials">
-                        {basicInfo.socials?.linkedin &&
-                            <img src="/assets/socials/linkedin.png" onClick={() => window.open(basicInfo.socials.linkedin, '_blank')} />
-                        }
-                        {basicInfo.socials?.github &&
-                            <img src="/assets/socials/github.png" onClick={() => window.open(basicInfo.socials.github, '_blank')} />
-                        }
-                        <img src="/assets/socials/mail.png" onClick={() => window.location.href = `mailto:${basicInfo.email}`} />
-                    </div>
-                </div>
+                <BasicInfo cv={props.cv} />
             </div>
 
             <div className="work-experience">
@@ -71,6 +49,30 @@ export const DefaultTemplate = (props: { cv: CV }) => {
         </>
     )
 }
+
+const BasicInfo = ({ cv: { basic_info: basicInfo, education } }: { cv: CV }) => <>
+    <div className="name-container">
+        <span>{basicInfo.firstName}</span>
+        <span>{basicInfo.lastName}</span>
+        <span className="occupation">
+            {`${basicInfo.occupation} | ${education.study} | ${education.institution} | ${education.year}`}
+        </span>
+    </div>
+    <div className="basic-info__other-info">
+        <div className="personal-pic">
+            <img src={`/assets/profile-pics/${basicInfo.photo || "nopic.jpg"}`} />
+        </div>
+        <div className="socials">
+            {basicInfo.socials?.linkedin &&
+                <img src="/assets/socials/linkedin.png" onClick={() => window.open(basicInfo.socials.linkedin, '_blank')} />
+            }
+            {basicInfo.socials?.github &&
+                <img src="/assets/socials/github.png" onClick={() => window.open(basicInfo.socials.github, '_blank')} />
+            }
+            <img src="/assets/socials/mail.png" onClick={() => window.location.href = `mailto:${basicInfo.email}`} />
+        </div>
+    </div>
+</>
 
 const WorkEntry = ({ entry }: { entry: CV['experience'][number] }) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(true);

@@ -1,12 +1,7 @@
-import { CV, NavigationItem } from "@types";
+import { CV } from "@types";
 import { classNames } from "@widgets/helper";
 import { useEffect, useState } from "react";
 import { getCvList } from "../web";
-import reactLogo from "/assets/react-logo.svg"
-
-const navigationItems: NavigationItem[] = [
-    { label: "CV liste", path: "/list" }
-]
 
 const isSelected = (id: number) => {
     const { pathname, search } = window.location

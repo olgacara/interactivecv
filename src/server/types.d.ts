@@ -6,6 +6,8 @@ export interface CV {
     skills: Skill[];
     experience: Experience[];
     education: Education;
+    hobbies: Hobby[];
+    languages: Language[];
 }
 
 interface BasicInfo {
@@ -25,7 +27,7 @@ interface BasicInfo {
 
 interface Skill {
     label: string;
-    level: string;
+    level: number;
 }
 
 interface Experience {
@@ -46,4 +48,18 @@ interface Education {
     institution: string;
     study: string;
     year: number;
+}
+
+interface Hobby {
+    logo: string;
+    info?: {
+        heading: string;
+        description?: string;
+    }
+}
+
+// Interface for each language
+interface Language {
+    label: string;
+    level: number; // out of 5
 }
