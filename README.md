@@ -12,11 +12,11 @@
 
 [![React][React.js]][React-url]
 
-## Kom godt i gang
+## Opsætning
 
 ### Forudsætninger
 
-Sørg for, at du har installeret alle de følgende forudsætninger på din maskine:
+Sørg for, at du har installeret alle de følgende packages på din maskine:
 
 * Node.js - [Hent & Installer Node.js](https://nodejs.org/en/download/) og den npm package manager.
 
@@ -41,7 +41,7 @@ Sørg for, at du har installeret alle de følgende forudsætninger på din maski
 
 
 <!-- USAGE EXAMPLES -->
-## Brug
+## Start
 
 ### Produktion
 
