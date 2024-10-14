@@ -21,6 +21,8 @@ declare module "@types" {
         skills: Skill[];
         experience: Experience[];
         education: Education;
+        hobbies: Hobby[];
+        languages: Language[];
     }
 
     interface BasicInfo {
@@ -40,7 +42,7 @@ declare module "@types" {
 
     interface Skill {
         label: string;
-        level: string;
+        level: number;
     }
 
     interface Experience {
@@ -61,5 +63,19 @@ declare module "@types" {
         institution: string;
         study: string;
         year: number;
+    }
+
+    interface Hobby {
+        logo: string;
+        info?: {
+            heading: string;
+            description?: string;
+        }
+    }
+
+    // Interface for each language
+    interface Language {
+        label: string;
+        level: number; // out of 5
     }
 }

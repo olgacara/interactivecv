@@ -9,6 +9,13 @@ export function getCvInfo(cvId: number | string) {
     })
 }
 
+export function getCvList() {
+    return requestJson<CV[]>({
+        method: 'GET',
+        url: `${apiPath}/fetchCvsList`
+    })
+}
+
 export async function requestJson<T>(request: RequestOptions): Promise<T> {
     try {
         const response = await fetch(request.url, {

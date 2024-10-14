@@ -1,9 +1,10 @@
 @use 'sass:color';
-$sidebarColor: #282b30;
+$sidebarColor: rgb(79, 86, 99);
 $white: #ffffff;
 
 body {
   margin: 0;
+  height: 100%;
 }
 
 .page-container {
@@ -30,12 +31,27 @@ body {
 }
 
 .sidebar {
-  width: 10rem;
-  height: 100vh;
+  width: 15rem;
+  min-height: 100vh;
   top: 0;
   left: 0;
   z-index: 9999;
   background-color: $sidebarColor;
+  padding-right: 1rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+
+    img {
+      width: 3rem;
+    }
+  }
 
   &__content {
     display: flex;
@@ -80,6 +96,7 @@ body {
 
       &--active {
         font-weight: 500;
+        background-color: color.adjust($sidebarColor, $lightness: 10%);
       }
 
       &:focus {

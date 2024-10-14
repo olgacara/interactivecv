@@ -5,11 +5,11 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "paths": {
-      "@assets/*": [
-        "./assets/*"
-      ],
       "@styles/*": [
         "./scss/*"
+      ],
+      "@widgets": [
+        "./widgets/index.ts"
       ],
       "@widgets/*": [
         "./widgets/*"

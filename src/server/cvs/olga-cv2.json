@@ -1,10 +1,10 @@
 {
-    "id": 1,
-    "cv_label": "Olga Cara Sørensen CV",
+    "id": 2,
+    "cv_label": "Olga Cara Sørensen CV2",
     "template": "default",
     "basic_info": {
         "firstName": "Olga Cara",
-        "lastName": "Sørensen",
+        "lastName": "Sørensen2",
         "occupation": "Fullstack udvikler",
         "tlf": "50325061",
         "email": "olgacara100@gmail.com",

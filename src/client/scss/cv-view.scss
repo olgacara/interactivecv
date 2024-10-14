@@ -2,6 +2,15 @@
 $white: #ffffff;
 $textColor: #333333;
 $borderColor: #aca899;
+$sectionPadding: 2rem 3rem;
+
+@mixin section-styling() {
+    height: fit-content;
+    padding: $sectionPadding;
+    border-bottom: 1px solid grey;
+    border-width: 1px;
+    border-color: $borderColor;
+}
 
 .cv-container {
     min-width: 80rem;
@@ -10,19 +19,17 @@ $borderColor: #aca899;
     align-self: center;
     background-color: $white;
     font-family: 'Verdana', sans-serif;
+    font-size: 14px;
     color: color.adjust($textColor, $lightness: -10%);
 
     .basic-info {
+        @include section-styling();
         display: flex;
         justify-content: space-between;
         height: 13rem;
-        padding: 3rem 3rem 1rem 3rem;
         background-image: url('/assets/background.jpg');
         background-size: cover;
         background-position: center;
-        border-bottom: 1px solid grey;
-        border-width: 1px;
-        border-color: $borderColor;
 
         .name-container {
             display: flex;
@@ -34,7 +41,7 @@ $borderColor: #aca899;
             font-style: normal;
 
             .occupation {
-                font-size: 1rem;
+                font-size: 14px;
                 color: color.adjust($textColor, $lightness: 10%)
             }
         }
@@ -67,15 +74,11 @@ $borderColor: #aca899;
     }
 
     .work-experience {
+        @include section-styling();
         display: flex;
         flex-direction: column;
         gap: 2rem;
         justify-content: space-between;
-        height: fit-content;
-        padding: 2rem 3rem;
-        border-bottom: 1px solid grey;
-        border-width: 1px;
-        border-color: $borderColor;
 
         &__header {
             margin: 0;
@@ -124,6 +127,138 @@ $borderColor: #aca899;
                         .project__description {
                             display: inline-block;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-container {
+        @include section-styling();
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .skills {
+            &__container {
+                flex: 1;
+            }
+
+            &__header {
+                text-align: center;
+            }
+
+            &__item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &--label {
+                    width: 8rem;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+
+        .languages {
+            &__container {
+                width: 20rem;
+            }
+
+            &__header {
+                text-align: center;
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            &__item {
+                display: flex;
+                gap: 1rem;
+                text-align: center;
+                padding: 20px 0 4px 20px;
+
+                &--label {
+                    width: 5rem;
+                }
+
+                &--proficiency {
+                    display: flex;
+                    gap: 0.8rem;
+
+                    .circle {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 50%;
+                        background-color: #d3d3d3;
+                    }
+
+                    .filled {
+                        background-color: lightblue;
+                    }
+
+                    .unfilled {
+                        background-color: #d3d3d3;
+                    }
+                }
+            }
+
+
+        }
+
+        .hobbies {
+            &__container {
+                width: 10rem;
+            }
+
+            &__header {
+                text-align: center;
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 0.5rem;
+            }
+
+
+            &__item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 3.6rem;
+                }
+
+                .tooltip {
+                    max-width: 15rem;
+                    background-color: white;
+                    padding: 0;
+
+                    &__container {
+                        background-color: white;
+                        color: black;
+                        border-radius: 0.6rem;
+                        padding: 0.5rem;
+                        box-shadow: #A59D95 0px 3px 8px;
+                    }
+
+                    &__header {
+                        display: block;
+                        margin-top: 0.4rem;
+                        font-weight: bold;
+                    }
+
+                    &__description {
+                        display: block;
+                        margin-top: 0.4rem;
+                        font-weight: bold;
                     }
                 }
             }

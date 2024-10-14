@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { useParams } from "react-router-dom";
 import { getCvInfo } from "../../web";
-import { Spinner } from "@widgets/spinner";
+import { Spinner } from "@widgets";
 import { DefaultTemplate } from "./templates/default-template";
 import "@styles/cv-view.scss"
 
@@ -60,7 +60,7 @@ export const CVView = () => {
 
     return (
         <>
-            <CVViewTitle cvLabel={"CV 1"} />
+            <CVViewTitle cvLabel={cv?.cv_label || 'Ingen navn'} />
             {isFetching && <Spinner />}
             <div className="cv-container">
                 {Template}

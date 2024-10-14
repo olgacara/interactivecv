@@ -1,5 +1,5 @@
 import React from "react";
-import "@styles/spinner.scss"
+import "./scss/spinner.scss"
 
 // Possible to add more customization like size, etc.
 export const Spinner = () => {

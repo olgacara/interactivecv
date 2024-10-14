@@ -33,6 +33,22 @@ app.get("/api/fetchCvInfo/:id", (req, res) => {
   }
 });
 
+app.get("/api/fetchCvsList", (req, res) => {
+  const jsonArray: CV[] = [];
+  const cvs = fs.readdirSync("./src/server/cvs");
+
+  cvs.forEach(file => {
+    if (path.extname(file) === '.json') {
+      // Read and parse the JSON file
+      const filePath = path.join("./src", "server", "cvs", file);
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      jsonArray.push(JSON.parse(fileContent));
+    }
+  });
+
+  res.send(jsonArray)
+});
+
 ViteExpress.listen(app, 3000, () =>
   console.log("Server is listening on port 3000..."),
 );
