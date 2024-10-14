@@ -24,7 +24,7 @@ Sørg for, at du har installeret alle de følgende forudsætninger på din maski
 
 ### Installation
 
-1. Clone the repo
+1. Klon repoen
    ```sh
    git clone https://github.com/olgacara/interactivecv.git
    ```
