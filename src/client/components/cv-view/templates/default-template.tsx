@@ -1,11 +1,12 @@
 import { CV } from "@types";
-import React from "react";
+import React, { useState } from "react";
 
 // Possible to add more customization like size, etc.
 export const DefaultTemplate = (props: { cv: CV }) => {
     const { cv: {
         basic_info: basicInfo,
-        education
+        education,
+        experience
     } } = props
 
     return (
@@ -29,11 +30,52 @@ export const DefaultTemplate = (props: { cv: CV }) => {
                         {basicInfo.socials?.github &&
                             <img src="/assets/socials/github.png" onClick={() => window.open(basicInfo.socials.github, '_blank')} />
                         }
-                        <img src="/assets/socials/mail.jpg" onClick={() => window.location.href = `mailto:${basicInfo.email}`} />
+                        <img src="/assets/socials/mail.png" onClick={() => window.location.href = `mailto:${basicInfo.email}`} />
                     </div>
                 </div>
             </div>
-        </>
 
+            <div className="work-experience">
+                <h2 className="work-experience__header">Erfaring</h2>
+                {experience.map(entry => <WorkEntry entry={entry} />)}
+            </div>
+        </>
     )
+}
+
+const WorkEntry = ({ entry }: { entry: CV['experience'][number] }) => {
+    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+    const { position, company, from, to, description, projects } = entry
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded)
+    };
+
+    return <div className="work-experience__item">
+        <div className="work-experience__item__label">
+            <button
+                className="expand_button"
+                onClick={toggleExpand}
+            >
+                {isExpanded ? '-' : '+'}
+            </button>
+            <div className="work-label">
+                <span> {`${position} hos ${company}`}</span>
+                <span>{`${from} - ${to ? to : 'Nu'}`}</span>
+            </div>
+        </div>
+        {isExpanded && (
+            <div className="expanded-info">
+                <span>{description}</span>
+                {projects?.length > 0 && <ul className="expanded-info__projects--list">
+                    {projects.map((project, ind) => (
+                        <li key={`exp-proj-${ind}`} className="expanded-info__projects--item">
+                            <span className="project__name">{`${project.label}${project.description ? ":" : ""}`}</span>
+                            {project.description && <p className="project__description">{project.description}</p>}
+                        </li>
+                    ))}
+                </ul>}
+            </div>
+        )}
+    </div>
 }
